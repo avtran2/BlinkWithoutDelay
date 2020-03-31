@@ -7,7 +7,7 @@ const int Green=33;// the number of the LED pin
 const int Blue=27;// the number of the LED pin
 
 // Variables will change:
-int ledState=LOW;// ledState used to set the LED
+int ledState=HIGH;// ledState used to set the LED; set on high first so that ledState will be high on even numbered loops
 
 // Generally, you should use "unsigned long" for variables that hold time
 // The value will quickly become too large for an int to store
@@ -17,7 +17,7 @@ unsigned long previousMillis=0;// will store last time LED was updated
 const long interval=1000;// interval at which to blink (milliseconds)
 
 //Tracks which LED to turn on
-int color=0;//Counter that tracks 
+int color=0;//tracks how many loops the sketch has run
 
 void setup() {
   // set the digital pin as output:
@@ -49,7 +49,7 @@ void loop() {
     }     
 
     //If clause that checks the modulo of color
-    if(color%6==0)
+    if(color%6==0)//Check if color fits the condition in sequential order
     {
       digitalWrite(Blue, ledState);     
     }
