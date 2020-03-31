@@ -51,7 +51,8 @@ void loop() {
     //If clause that checks the modulo of color
     if(color%6==0)//Check if color fits the condition in sequential order
     {
-      digitalWrite(Blue, ledState);     
+      digitalWrite(Blue, ledState);   
+      color=0;//Reset the counter to allow for RGB pattern  
     }
     else if(color%4==0)
     {
